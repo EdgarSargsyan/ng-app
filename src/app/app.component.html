@@ -1,20 +1,119 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div>{{testdataAsPromise.data.data[0].price}}
 
+{{keyss}}
+    <nav>
+                        <a routerLink="">Главная</a>
+                        <a routerLink="/about">О сайте</a>
+                        <a [routerLink]="['currency', '5']">item 5</a>
+                    </nav>
+               </div>
+               
+<h1 translate>Title</h1>
+
+
+        <h3>{{ 'Change language' | translate:lang }}</h3>
+
+        <button (click)="selectLanguage('en');">English</button>
+        <button (click)="selectLanguage('it');">Italiano</button>
+        
+    <div class="navbar navbar main-navbar" role="navigation">
+      <div class="container container-header">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="./assets/img/logo.svg" width="132"></a>
+        </div>
+        <div class="col-md-6">
+           <div class="row summary-block-top">
+            <div class="col-md-4">Market cap<br><h3>${{coindataAsPromise.data.total_market_cap_usd / 1000000000 | number:'1.0-0' }}B</h3></div>
+            <div class="col-md-4">24H volume<br><h3>${{coindataAsPromise.data.total_24h_volume_usd / 1000000000 | number:'1.0-0' }}B</h3></div>
+            <div class="col-md-4">BTC dominance<br><h3>${{coindataAsPromise.data.bitcoin_percentage_of_market_cap | number:'1.0-0' }}B</h3></div>
+          </div>
+       </div>
+        <div class="navbar navbar-service pull-right">
+          <ul class="nav navbar-nav">
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control search-control" placeholder="Search coins">
+              </div>
+              <i class="icon-search form-control-search"></i>
+            </form>
+          </ul>
+        </div><!--/.nav-collapse -->
+      <div class="navbar-header-mobile">
+          <div class="mobile-menu" onclick="$('.mobile-menu-main').fadeIn(300);">
+                  <img src="./assets/img/menu.svg">
+          </div>
+          <a class="navbar-brand" href="#"><img src="./assets/img/logo.svg" width="132"></a>
+
+            <form class="navbar-form navbar-form-search navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control search-control" placeholder="Search coins">
+              </div>
+              <i class="icon-search form-control-search"></i>
+            </form>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container container-element-page" role="main">
+
+	      <h1>{{title}}</h1>
+
+	      <div class="navbar navbar-main-block">
+	        <div class="container">
+	          <div class="navbar-header">
+	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	              <span class="sr-only">Toggle navigation</span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	            </button>
+	          </div>
+	          <div class="navbar-collapse collapse">
+	            <ul class="nav navbar-nav">
+	              <li><a href="#">Growing</a></li>
+	              <li class="active"><a href="#">Falling</a></li>
+	              <li><a href="#">Arbitrage</a></li>
+	              <li><a href="#">Exchanges</a></li>
+	              <li><a href="#">Calculator</a></li>
+	              <li><a href="#">Forum</a></li>
+	              <li><a href="#">Portfolio</a></li>
+	              <li><a href="#">Alerts</a></li>
+	            </ul>
+	          </div><!--/.nav-collapse -->
+	        </div>
+	      </div>
+
+   		<router-outlet></router-outlet>
+
+   	</div>
+
+    <div class="container">
+      <footer>
+        <p class="pull-right"><span class="last-update">Last updated: Aug 28, 2017 6:50 PM UTC</span><a href="#">Back to top</a></p>
+        <p>© 2017 AllCoinStat  <a href="#">About</a>  <a href="#">Advertise</a>  <a href="#">FAQ</a>  <a href="#">Reques Form</a>  <!-- Dropup button -->
+            <div class="dropup">
+              <button class="btn btn-languages dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Change language
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a href="#">RU</a></li>
+                <li><a href="#">EN</a></li>
+              </ul>
+            </div>
+      </footer>
+  </div>
+     
+  <div class="mobile-menu-main">
+    <div class="close-link" onclick="$('.mobile-menu-main').fadeOut(300);"></div>
+    <div class="mobile-row-cell">
+      <a href="/"><img src="./assets/img/logo.svg" class="LOGO"></a>
+    </div>
+  </div>
